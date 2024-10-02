@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      width: {
+        '128': '32rem',
+      }
     },
     forntFamily: {
       primary: "Montserrat"
