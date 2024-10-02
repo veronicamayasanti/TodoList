@@ -12,7 +12,7 @@ function Edit({editTodo, task}) {
     <form className="mb-4 font-primary w-fullf" onSubmit={handleSubmit}>
       <input
         type="text"
-        className="outline-none bg-transparent border border-white-900 p-4 w-[300px] text-black mb-8 rounded placeholder:text-gray-500"
+        className="outline-none bg-transparent border border-black p-4 w-[300px] text-black mb-8 rounded placeholder:text-black"
         placeholder="Update your task"
         onChange={(e) => setValue(e.target.value)}
         value={value}

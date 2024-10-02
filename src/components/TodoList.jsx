@@ -25,7 +25,6 @@ function TodoList() {
     setTodoValue(todoValue.filter(todo => todo.id !== id))
   }
 
-
 const editTodo = id => {
   setTodoValue(todoValue.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo))
 }
@@ -34,8 +33,15 @@ const editTask = (task, id) => {
   setTodoValue(todoValue.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
 }
 
+const toggleComplete = id => {
+  setTodoValue(todoValue.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
+}
+
+
+
   return (
     <div className="container mx-auto bg-green-400 mt-10 p-8 rounded-md w-[500px]">
+      <h2 className="text-2xl font-bold mb-4">To-Do List By MayaDev</h2>
       <Form createTodo={createTodo} />
       {todoValue.map((todo, index) =>
         todo.isEditing ? (
@@ -46,6 +52,7 @@ const editTask = (task, id) => {
             task={todo}
             deleteTodo={deleteTodo}
             editTodo={editTodo}
+            toggleComplete={toggleComplete}
           />
         )
       )}
